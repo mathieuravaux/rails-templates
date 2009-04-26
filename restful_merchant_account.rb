@@ -23,7 +23,7 @@ plugin 'restful-authentication', :git => 'git://github.com/technoweenie/restful-
 generate "rspec"
 generate "authenticated", "user session --include-activation --aasm --rspec" 
 generate "cucumber"
-generate "rspec_scaffold", "account", "sub_domain:string", "user_id:integer", "description:string", ":site_name"
+generate "rspec_scaffold", "account", "sub_domain:string", "user_id:integer", "description:string", "site_name:string"
 
 #stick this all into a git repo
 git :init
