@@ -10,20 +10,21 @@ gem 'rspec', :lib => false
 gem 'faker'
 gem 'cucumber'
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
-gem 'rubyist-aasm', :source => "http://gems.github.com", :lib => 'aasm' 
 gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com", :lib => "subdomain-fu"
-gem 'notahat-machinist', :source => "http://gems.github.com", :lib => 'machinist'
+gem 'thoughtbot-clearance', :source => "http://gems.github.com", :lib => 'clearance'
 rake "gems:install", :sudo => true
 
 #plugins for active merchant and restful_auth.
 plugin 'active_merchant', :git => 'git://github.com/Shopify/active_merchant.git'
-plugin 'restful-authentication', :git => 'git://github.com/technoweenie/restful-authentication.git restful_authentication'
+
 
 #generator scripts used to run restful_auth
 generate "rspec"
-generate "authenticated", "user session --include-activation --aasm --rspec" 
+generate "clearance"
+generate "clearance_features"
 generate "cucumber"
 generate "rspec_scaffold", "account", "sub_domain:string", "user_id:integer", "description:string", "site_name:string"
+generate "rspec_controller", "site", "index", "about_us", "contact_us"
 
 #delete any files not needed.
 run "rm -Rf public/index.html"
