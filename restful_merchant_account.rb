@@ -25,6 +25,8 @@ generate "authenticated", "user session --include-activation --aasm --rspec"
 generate "cucumber"
 generate "rspec_scaffold", "account", "sub_domain:string", "user_id:integer", "description:string", "site_name:string"
 
+#delete any files not needed.
+run "rm -Rf public/index.html"
 #stick this all into a git repo
 git :init
 
